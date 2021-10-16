@@ -1,4 +1,8 @@
 Thumbs.db
+msi/*.wixobj
+msi/*.wixpdb
 src/.vs/
 src/BuildInfoAdapter/bin/
 src/BuildInfoAdapter/obj/
+src/SetAssemblyProperties/bin/
+src/SetAssemblyProperties/obj/

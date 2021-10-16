@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Product Name="SetAssemblyProperties" Version="1.0.21289.0836" Manufacturer="Dave Pusey" Id="*" UpgradeCode="95BB1F3C-85CB-427C-9B0B-2C96FB04AF2E" Language="2057" Codepage="1252">
+        <Package Description="SetAssemblyProperties 1.0.21289.0836 Installer" Manufacturer="Dave Pusey" InstallScope="perMachine" InstallerVersion="100" Languages="2057" Compressed="yes" SummaryCodepage="1252" />
+        <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+        <MediaTemplate EmbedCab="yes" />
+
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            <Directory Id="ProgramFilesFolder" Name="Program Files">
+                <Directory Id="dirCompanyName" Name="Dave Pusey">
+                    <Directory Id="INSTALLDIR" Name="SetAssemblyProperties" FileSource="..\build">
+                        <Component Id="comp_SetAssemblyPropertiesExe">
+                            <File Id="file_SetAssemblyPropertiesExe" Name="SetAssemblyProperties.exe" />
+                        </Component>
+                        <Component Id="comp_SetAssemblyPropertiesDll">
+                            <File Id="file_SetAssemblyPropertiesDll" Name="SetAssemblyProperties.dll" />
+                        </Component>
+                        <Component Id="comp_SetAssemblyPropertiesRuntimeConfigJson">
+                            <File Id="file_SetAssemblyPropertiesRuntimeConfigJson" Name="SetAssemblyProperties.runtimeconfig.json" />
+                        </Component>
+                        <Component Id="comp_SetAssemblyPropertiesDepsJson">
+                            <File Id="file_SetAssemblyPropertiesDepsJson" Name="SetAssemblyProperties.deps.json" />
+                        </Component>
+                        <Component Id="comp_BuildInfoAdapterDll">
+                            <File Id="file_BuildInfoAdapterDll" Name="BuildInfoAdapter.dll" />
+                        </Component>
+                    </Directory>
+                </Directory>
+            </Directory>
+        </Directory>
+		
+		<Feature Id="Complete">
+			<ComponentRef Id="comp_SetAssemblyPropertiesExe" />
+			<ComponentRef Id="comp_SetAssemblyPropertiesDll" />
+			<ComponentRef Id="comp_SetAssemblyPropertiesRuntimeConfigJson" />
+			<ComponentRef Id="comp_SetAssemblyPropertiesDepsJson" />
+			<ComponentRef Id="comp_BuildInfoAdapterDll" />
+		</Feature>
+		
+		<Property Id="ARPNOMODIFY" Value="1" />
+		<Property Id="ARPNOREPAIR" Value="1" />
+    </Product>
+</Wix>

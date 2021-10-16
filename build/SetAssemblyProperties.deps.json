@@ -1,0 +1,41 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "SetAssemblyProperties/1.0.21289.0836": {
+        "dependencies": {
+          "DavePusey.BuildInfoAdapter": "1.0.21289.805"
+        },
+        "runtime": {
+          "SetAssemblyProperties.dll": {}
+        }
+      },
+      "DavePusey.BuildInfoAdapter/1.0.21289.805": {
+        "runtime": {
+          "lib/net5.0/BuildInfoAdapter.dll": {
+            "assemblyVersion": "1.0.21289.805",
+            "fileVersion": "1.0.21289.805"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SetAssemblyProperties/1.0.21289.0836": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DavePusey.BuildInfoAdapter/1.0.21289.805": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sgynLMIEU4iPO+e1KplxbdqisMIX5Xeij9GrVDkZqfzQ5tR4xMFZ+6xmcA74VdLoHnC36RnbMxgeivhTzoUBpg==",
+      "path": "davepusey.buildinfoadapter/1.0.21289.805",
+      "hashPath": "davepusey.buildinfoadapter.1.0.21289.805.nupkg.sha512"
+    }
+  }
+}

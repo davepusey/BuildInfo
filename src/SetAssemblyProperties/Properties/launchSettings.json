@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SetAssemblyProperties": {
+      "commandName": "Project",
+      "commandLineArgs": "..\\..\\..\\SetAssemblyProperties.csproj"
+    }
+  }
+}
