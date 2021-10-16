@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>net5.0;net48</TargetFrameworks>
+    <Version>1.0.21289.0805</Version>
+    <Authors>Dave Pusey</Authors>
+    <Company>Dave Pusey</Company>
+    <PackageProjectUrl>https://github.com/davepusey/BuildInfo</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/davepusey/BuildInfo</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <Description>Component of my BuildInfo system used for auto-versioning my Visual Studio builds.</Description>
+    <PackageId>DavePusey.BuildInfoAdapter</PackageId>
+    <Product>BuildInfo</Product>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+  </PropertyGroup>
+
+</Project>
