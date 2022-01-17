@@ -2,7 +2,7 @@
   <PropertyGroup>
     <OutputType>Exe</OutputType>
     <TargetFramework>net5.0</TargetFramework>
-    <Version>1.0.21289.0836</Version>
+    <Version>1.0.22017.1214</Version>
     <Authors>Dave Pusey</Authors>
     <Company>Dave Pusey</Company>
     <PackageProjectUrl>https://github.com/davepusey/BuildInfo</PackageProjectUrl>

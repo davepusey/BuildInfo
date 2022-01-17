@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1252"?>
 <Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
-    <Product Name="SetAssemblyProperties" Version="1.0.21289.0836" Manufacturer="Dave Pusey" Id="*" UpgradeCode="95BB1F3C-85CB-427C-9B0B-2C96FB04AF2E" Language="2057" Codepage="1252">
-        <Package Description="SetAssemblyProperties 1.0.21289.0836 Installer" Manufacturer="Dave Pusey" InstallScope="perMachine" InstallerVersion="100" Languages="2057" Compressed="yes" SummaryCodepage="1252" />
+    <Product Name="SetAssemblyProperties" Version="1.0.22017.1214" Manufacturer="Dave Pusey" Id="*" UpgradeCode="95BB1F3C-85CB-427C-9B0B-2C96FB04AF2E" Language="2057" Codepage="1252">
+        <Package Description="SetAssemblyProperties 1.0.22017.1214 Installer" Manufacturer="Dave Pusey" InstallScope="perMachine" InstallerVersion="100" Languages="2057" Compressed="yes" SummaryCodepage="1252" />
         <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
         <MediaTemplate EmbedCab="yes" />
 

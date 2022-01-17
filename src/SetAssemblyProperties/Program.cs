@@ -25,41 +25,52 @@ namespace SetAssemblyProperties
 
                 XmlDocument xmlDocument = new XmlDocument();
                 xmlDocument.Load(projectFile.FullName);
-                XmlNode xmlPropertyGroupNode = xmlDocument.SelectSingleNode("/Project/PropertyGroup");
 
-                bool versionElementFound = false;
-                List<XmlElement> elementsToRemove = new List<XmlElement>();
-
-                foreach (XmlElement xmlPropertyElement in xmlPropertyGroupNode.ChildNodes)
+                if (xmlDocument.DocumentElement.HasAttribute("Sdk"))
                 {
-                    switch (xmlPropertyElement.Name)
+                    XmlNode xmlPropertyGroupNode = xmlDocument.SelectSingleNode("/Project/PropertyGroup");
+
+                    bool versionElementFound = false;
+                    List<XmlElement> elementsToRemove = new List<XmlElement>();
+
+                    foreach (XmlElement xmlPropertyElement in xmlPropertyGroupNode.ChildNodes)
                     {
-                        case "AssemblyVersion":
-                        case "FileVersion":
-                            elementsToRemove.Add(xmlPropertyElement);
-                            break;
-                        case "Version":
-                            xmlPropertyElement.InnerText = productVersion.ToString();
-                            versionElementFound = true;
-                            break;
+                        switch (xmlPropertyElement.Name)
+                        {
+                            case "AssemblyVersion":
+                            case "FileVersion":
+                                elementsToRemove.Add(xmlPropertyElement);
+                                break;
+                            case "Version":
+                                xmlPropertyElement.InnerText = productVersion.ToString();
+                                versionElementFound = true;
+                                break;
+                        }
                     }
-                }
 
-                foreach(XmlElement xmlPropertyElement in elementsToRemove)
+                    foreach (XmlElement xmlPropertyElement in elementsToRemove)
+                    {
+                        xmlPropertyElement.ParentNode.RemoveChild(xmlPropertyElement);
+                    }
+
+                    if (versionElementFound == false)
+                    {
+                        XmlElement versionElement = xmlDocument.CreateElement("Version");
+                        versionElement.InnerText = productVersion.ToString();
+                        xmlPropertyGroupNode.AppendChild(versionElement);
+                    }
+
+                    xmlDocument.Save(projectFile.FullName);
+
+                    Console.WriteLine("[" + BuildInfo.Name + "] Version updated to " + productVersion.ToString());
+                }
+                else
                 {
-                    xmlPropertyElement.ParentNode.RemoveChild(xmlPropertyElement);
+                    Console.WriteLine("WARNING: The specified project file does not appear to be in the newer Microsoft.NET.Sdk format.");
+                    Console.WriteLine();
+                    Console.WriteLine("For more information, please refer to:");
+                    Console.WriteLine("\thttps://docs.microsoft.com/en-us/dotnet/core/project-sdk/overview#project-files");
                 }
-
-                if (versionElementFound == false)
-                {
-                    XmlElement versionElement = xmlDocument.CreateElement("Version");
-                    versionElement.InnerText = productVersion.ToString();
-                    xmlPropertyGroupNode.AppendChild(versionElement);
-                }
-
-                xmlDocument.Save(projectFile.FullName);
-
-                Console.WriteLine("[" + BuildInfo.Name + "] Version updated to " + productVersion.ToString());
             }
         }
 
