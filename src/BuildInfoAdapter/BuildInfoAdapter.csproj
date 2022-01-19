@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFrameworks>net5.0;net48</TargetFrameworks>
-    <Version>1.0.21289.0805</Version>
+    <Version>1.0.22019.1330</Version>
     <Authors>Dave Pusey</Authors>
     <Company>Dave Pusey</Company>
     <PackageProjectUrl>https://github.com/davepusey/BuildInfo</PackageProjectUrl>

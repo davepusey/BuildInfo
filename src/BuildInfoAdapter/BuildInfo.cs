@@ -19,5 +19,8 @@ namespace BuildInfoAdapter
         // currently unimplemented - provided for compatibility
         public static readonly string BuildComputer = "";
         public static readonly string BuildUser = "";
+
+        public static readonly string WebFullName = Name + " - Build " + Version + " (Runtime " + Environment.Version.ToString() + " on " + Environment.MachineName.ToUpper() + ")";
+        public static readonly string WebMetaGenerator = "<meta name=\"generator\" content=\"" + WebFullName + "\" />";
     }
 }
